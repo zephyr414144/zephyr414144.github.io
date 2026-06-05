@@ -2,147 +2,227 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Launchpad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launchpad — Turn Skills Into Income</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #0b1020;
+      color: #e5e7eb;
       line-height: 1.6;
     }
 
-    header {
-      background: #1e293b;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #38bdf8;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-
+    /* NAV */
     nav {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #0b1220;
-      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: #38bdf8;
+      font-size: 1.4rem;
     }
 
     nav a {
-      color: #e2e8f0;
+      margin-left: 20px;
+      color: #cbd5e1;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h2 {
+    nav a:hover {
       color: #38bdf8;
-      margin-bottom: 10px;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: radial-gradient(circle at top, #1e3a8a, #0b1020 60%);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #0b1020;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 10%;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.7);
       padding: 20px;
-      margin: 15px 0;
-      border-radius: 10px;
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid rgba(148, 163, 184, 0.1);
     }
 
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    /* FEATURE TAG */
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
-      background: #0b1220;
-      font-size: 0.9rem;
+      padding: 40px;
+      background: #0a0f1d;
       color: #94a3b8;
     }
 
-    .highlight {
-      color: #38bdf8;
-      font-weight: bold;
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Launchpad</h1>
-    <p>Turn your skills into real income. Built for students, by students.</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
-    <a href="#features">Features</a>
-    <a href="#marketplace">Marketplace</a>
-    <a href="#vision">Vision</a>
+    <h1>Launchpad</h1>
+    <div>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#services">Services</a>
+      <a href="#vision">Vision</a>
+    </div>
   </nav>
 
+  <div class="hero">
+    <h2>Turn Your Skills Into Income</h2>
+    <p>
+      Launchpad is a student-powered marketplace where teens help other teens
+      in their local community — safely, quickly, and affordably.
+    </p>
+    <a href="#features" class="btn">Explore Features</a>
+  </div>
+
   <section id="about">
-    <h2>About Launchpad</h2>
-    <div class="card">
-      Launchpad is a student-focused platform where teenagers (13–18) can offer and find services in their local community.
-      It connects students who need help with students who have skills like tutoring, video editing, photography, gaming coaching, and more.
-    </div>
+    <h3>What is Launchpad?</h3>
+    <p>
+      Launchpad is a peer-to-peer marketplace for students aged 13–18.
+      It connects people who need help with people who already have the skills — right in their neighborhood.
+    </p>
   </section>
 
   <section id="features">
-    <h2>Key Features</h2>
+    <h3>Key Features</h3>
 
-    <div class="card">
-      <span class="highlight">📍 Local Matching</span><br />
-      Find nearby students offering the help you need instantly.
-    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Local First</div>
+        <h4>Nearby Matching</h4>
+        <p>Find students in your area instantly using smart location-based search.</p>
+      </div>
 
-    <div class="card">
-      <span class="highlight">🧑‍🎓 Student Marketplace</span><br />
-      Offer or request services like tutoring, tech help, or content creation.
-    </div>
+      <div class="card">
+        <div class="tag">Trust System</div>
+        <h4>Ratings & Reviews</h4>
+        <p>Build reputation with verified profiles and community feedback.</p>
+      </div>
 
-    <div class="card">
-      <span class="highlight">⭐ Ratings & Trust</span><br />
-      Build reputation through reviews and verified profiles.
-    </div>
-
-    <div class="card">
-      <span class="highlight">💳 Secure Payments</span><br />
-      Safe in-app transactions with a small platform fee.
+      <div class="card">
+        <div class="tag">Safe Payments</div>
+        <h4>Secure Transactions</h4>
+        <p>Simple in-app payments with protection for both buyers and sellers.</p>
+      </div>
     </div>
   </section>
 
-  <section id="marketplace">
-    <h2>Services You Can Offer</h2>
-    <div class="card">
-      • Academic Tutoring<br />
-      • Video Editing<br />
-      • Photography<br />
-      • Tech Support<br />
-      • Gaming Coaching<br />
-      • Social Media Content Creation
+  <section id="services">
+    <h3>What You Can Do</h3>
+
+    <div class="grid">
+      <div class="card">📚 Tutoring</div>
+      <div class="card">🎬 Video Editing</div>
+      <div class="card">📸 Photography</div>
+      <div class="card">💻 Tech Help</div>
+      <div class="card">🎮 Gaming Coaching</div>
+      <div class="card">📱 Social Media Content</div>
     </div>
   </section>
 
   <section id="vision">
-    <h2>Our Vision</h2>
+    <h3>Our Vision</h3>
     <div class="card">
-      Launchpad empowers students to earn money, build real-world skills, and learn entrepreneurship early.
-      It creates a safe, local ecosystem where teenage talent becomes opportunity.
+      Launchpad empowers students to earn money, learn real-world business skills,
+      and build confidence while still in school. It’s more than an app — it’s a
+      student economy.
     </div>
   </section>
 
